@@ -1,928 +1,398 @@
-```html
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="居宅介護支援事業所 鳶｜大阪府岸和田市を中心に、障がい福祉・居宅介護・移動支援・同行援護・グループホーム支援を行っています。">
-<title>居宅介護支援事業所 鳶</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Old+Mincho:wght@500;700&display=swap" rel="stylesheet">
+<!-- Googleの洗練された公式アイコンフォント（Material Symbols） -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
 :root{
---blue:#0f6fd6;
---deepBlue:#004a99;
---sky:#57b9ff;
---pink:#ff5f97;
---green:#45b56a;
---white:#ffffff;
---text:#24344d;
---light:#f6fbff;
---shadow:0 10px 35px rgba(0,0,0,.08);
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:'Noto Sans JP',sans-serif;
-color:var(--text);
-background:#fff;
-line-height:1.8;
-overflow-x:hidden;
-}
-
-img{
-max-width:100%;
-display:block;
-}
-
-section{
-padding:90px 20px;
-position:relative;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-}
-
-/* NAV */
-
-header{
-position:fixed;
-width:100%;
-top:0;
-left:0;
-z-index:999;
-background:rgba(255,255,255,.92);
-backdrop-filter:blur(10px);
-box-shadow:0 2px 10px rgba(0,0,0,.05);
-}
-
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-height:78px;
-}
-
-.logo{
-font-family:'Zen Old Mincho',serif;
-font-size:26px;
-font-weight:700;
-color:var(--deepBlue);
-text-decoration:none;
-}
-
-.logo small{
-display:block;
-font-size:11px;
-font-family:'Noto Sans JP',sans-serif;
-letter-spacing:.15em;
-color:#777;
-}
-
-.nav-links{
-display:flex;
-gap:28px;
-list-style:none;
-}
-
-.nav-links a{
-text-decoration:none;
-color:var(--deepBlue);
-font-weight:500;
-font-size:15px;
-transition:.3s;
-}
-
-.nav-links a:hover{
-color:var(--pink);
-}
-
-.contact-btn{
-background:linear-gradient(135deg,var(--pink),#ff8eb5);
-color:#fff !important;
-padding:12px 22px;
-border-radius:999px;
-box-shadow:0 10px 20px rgba(255,95,151,.25);
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-min-height:780px;
-display:flex;
-align-items:center;
-position:relative;
-overflow:hidden;
-}
-
-.hero::before{
-content:'';
-position:absolute;
-inset:0;
-background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1800&auto=format&fit=crop') center/cover;
-z-index:0;
-}
-
-.hero::after{
-content:'';
-position:absolute;
-inset:0;
-background:linear-gradient(to right,rgba(0,52,110,.65),rgba(0,52,110,.15));
-z-index:1;
-}
-
-.hero-content{
-position:relative;
-z-index:2;
-max-width:1200px;
-margin:auto;
-padding:0 20px;
-width:100%;
-}
-
-.hero-tag{
-display:inline-block;
-background:rgba(255,255,255,.2);
-backdrop-filter:blur(8px);
-border:1px solid rgba(255,255,255,.4);
-color:#fff;
-padding:10px 20px;
-border-radius:999px;
-font-size:14px;
-margin-bottom:28px;
-}
-
-.hero h1{
-font-family:'Zen Old Mincho',serif;
-font-size:clamp(40px,6vw,72px);
-line-height:1.4;
-color:#fff;
-margin-bottom:24px;
-text-shadow:0 5px 25px rgba(0,0,0,.3);
-}
-
-.hero p{
-max-width:640px;
-font-size:18px;
-color:rgba(255,255,255,.92);
-margin-bottom:38px;
-}
-
-.hero-buttons{
-display:flex;
-gap:18px;
-flex-wrap:wrap;
-}
-
-.hero-buttons a{
-text-decoration:none;
-padding:16px 34px;
-border-radius:999px;
-font-weight:700;
-transition:.3s;
-}
-
-.btn-primary{
-background:linear-gradient(135deg,#ff5f97,#ff8fb4);
-color:#fff;
-box-shadow:0 15px 30px rgba(255,95,151,.25);
-}
-
-.btn-primary:hover{
-transform:translateY(-3px);
-}
-
-.btn-secondary{
-background:rgba(255,255,255,.18);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,.5);
-color:#fff;
-}
-
-.wave{
-position:absolute;
-bottom:0;
-left:0;
-width:100%;
-line-height:0;
-z-index:5;
-}
-
-/* SECTION TITLE */
-
-.section-title{
-text-align:center;
-margin-bottom:60px;
-}
-
-.section-title span{
-color:var(--pink);
-font-weight:700;
-letter-spacing:.2em;
-font-size:13px;
-}
-
-.section-title h2{
-font-family:'Zen Old Mincho',serif;
-font-size:42px;
-margin-top:14px;
-color:var(--deepBlue);
-}
-
-/* ABOUT */
-
-.about{
-background:linear-gradient(to bottom,#ffffff,#eef8ff);
-}
-
-.about-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
-
-.about-image{
-border-radius:30px;
-overflow:hidden;
-box-shadow:var(--shadow);
-}
-
-.about-image img{
-height:100%;
-object-fit:cover;
-}
-
-.about-content h3{
-font-family:'Zen Old Mincho',serif;
-font-size:34px;
-line-height:1.7;
-margin-bottom:28px;
-color:var(--deepBlue);
-}
-
-.about-content p{
-margin-bottom:18px;
-font-size:16px;
-}
-
-/* SERVICES */
-
-.services{
-background:#fff;
-}
-
-.service-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:28px;
-}
-
-.service-card{
-background:#fff;
-border-radius:26px;
-padding:40px 28px;
-text-align:center;
-box-shadow:var(--shadow);
-transition:.35s;
-position:relative;
-overflow:hidden;
-}
-
-.service-card::before{
-content:'';
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:6px;
-background:linear-gradient(90deg,var(--sky),var(--pink));
-}
-
-.service-card:hover{
-transform:translateY(-10px);
-}
-
-.service-icon{
-width:95px;
-height:95px;
-border-radius:50%;
-margin:auto;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:42px;
-margin-bottom:24px;
-background:linear-gradient(135deg,#eef7ff,#ffffff);
-box-shadow:0 8px 25px rgba(0,0,0,.05);
-}
-
-.service-card h3{
-font-size:22px;
-margin-bottom:14px;
-color:var(--deepBlue);
-}
-
-.service-card p{
-font-size:15px;
-color:#5d6a7b;
-}
-
-/* AREA */
-
-.area{
-background:linear-gradient(135deg,#009dff,#0054a8);
-color:#fff;
-overflow:hidden;
-}
-
-.area::before{
-content:'';
-position:absolute;
-width:500px;
-height:500px;
-border-radius:50%;
-background:rgba(255,255,255,.08);
-right:-200px;
-top:-120px;
-}
-
-.area .section-title h2,
-.area .section-title span{
-color:#fff;
-}
-
-.area-wrap{
-text-align:center;
-}
-
-.area-text{
-font-size:20px;
-margin-bottom:35px;
-}
-
-.area-tags{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:16px;
-}
-
-.area-tags span{
-background:rgba(255,255,255,.18);
-padding:14px 26px;
-border-radius:999px;
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,.2);
-font-weight:700;
-}
-
-/* RECRUIT */
-
-.recruit{
-background:linear-gradient(to bottom,#ffffff,#f3fbff);
-}
-
-.recruit-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:28px;
-}
-
-.recruit-card{
-background:#fff;
-border-radius:26px;
-overflow:hidden;
-box-shadow:var(--shadow);
-transition:.35s;
-}
-
-.recruit-card:hover{
-transform:translateY(-8px);
-}
-
-.recruit-card img{
-height:250px;
-width:100%;
-object-fit:cover;
-}
-
-.recruit-body{
-padding:28px;
-}
-
-.recruit-body h3{
-font-size:28px;
-margin-bottom:12px;
-color:var(--deepBlue);
-}
-
-.recruit-body p{
-font-size:15px;
-margin-bottom:18px;
-color:#5c6878;
-}
-
-.recruit-body a{
-display:inline-block;
-text-decoration:none;
-padding:12px 22px;
-border-radius:999px;
-background:linear-gradient(135deg,var(--sky),var(--blue));
-color:#fff;
-font-weight:700;
-}
-
-/* FAQ */
-
-.faq{
-background:#fff;
-}
-
-.faq-list{
-max-width:900px;
-margin:auto;
-}
-
-.faq-item{
-background:#fff;
-border-radius:20px;
-padding:24px 28px;
-margin-bottom:18px;
-box-shadow:var(--shadow);
-}
-
-.faq-item h3{
-color:var(--deepBlue);
-margin-bottom:12px;
-font-size:18px;
-}
-
-/* CONTACT */
-
-.contact{
-background:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1800&auto=format&fit=crop') center/cover;
-position:relative;
-}
-
-.contact::before{
-content:'';
-position:absolute;
-inset:0;
-background:rgba(0,70,140,.75);
-}
-
-.contact-inner{
-position:relative;
-z-index:2;
-max-width:900px;
-margin:auto;
-text-align:center;
-color:#fff;
-}
-
-.contact h2{
-font-family:'Zen Old Mincho',serif;
-font-size:48px;
-margin-bottom:22px;
-}
-
-.contact p{
-font-size:18px;
-margin-bottom:35px;
-}
-
-.contact a{
-display:inline-block;
-text-decoration:none;
-padding:18px 40px;
-border-radius:999px;
-background:#fff;
-color:var(--deepBlue);
-font-weight:700;
-font-size:18px;
-box-shadow:0 15px 35px rgba(0,0,0,.2);
-}
-
-/* FOOTER */
-
-footer{
-background:#00315f;
-color:rgba(255,255,255,.8);
-padding:50px 20px;
-}
-
-.footer-grid{
-display:flex;
-justify-content:space-between;
-gap:30px;
-flex-wrap:wrap;
-}
-
-.footer-logo{
-font-family:'Zen Old Mincho',serif;
-font-size:28px;
-margin-bottom:14px;
-}
-
-.footer-info p{
-margin-bottom:6px;
-}
-
-.copy{
-text-align:center;
-margin-top:40px;
-font-size:13px;
-opacity:.7;
-}
-
-/* MOBILE */
-
-@media(max-width:980px){
-
-.about-grid,
-.service-grid,
-.recruit-grid{
-grid-template-columns:1fr;
-}
-
-.hero{
-min-height:680px;
-}
-
-.hero h1{
-font-size:42px;
-}
-
-.nav-links{
-display:none;
-}
-
-.about-content h3{
-font-size:28px;
-}
-
-.section-title h2{
-font-size:34px;
-}
-
-.contact h2{
-font-size:36px;
-}
-
-}
-
-@media(max-width:600px){
-
-.hero-buttons a{
-width:100%;
-text-align:center;
-}
-
-.hero p{
-font-size:16px;
-}
-
-.service-card,
-.recruit-body,
-.faq-item{
-padding:24px;
-}
-
-section{
-padding:70px 18px;
-}
-
-}
-
+  /* 沖縄の美しい海と太陽をイメージした「美ら海パレット」 */
+  --sea:#38BDF8;           /* メイン：透明感あふれる美ら海スカイブルー */
+  --sea-dark:#0369A1;      /* 濃色：誠実で信頼感のあるディープオーシャンネイビー */
+  --sea-light:#F0F9FF;     /* 背景薄色：クリーンで涼しげなクリアアイスブルー */
+  
+  --coral:#FB923C;         /* アクセント：南国の太陽と温もりを伝えるサンゴコーラル */
+  --coral-light:#FFF7ED;   /* 背景薄色：ふんわり優しいシェルピンクベージュ */
+  
+  --sun:#FBBF24;           /* 補色：きらめく陽光を表すサンシャインイエロー */
+  --sun-light:#FEFCE8;     /* 背景薄色：明るい砂浜のようなシフォンイエロー */
+  
+  --white:#fff;
+  --sand:#F8FAFC;          /* ベース背景：波しぶきのように爽やかなプレーンホワイトグレー */
+  --text:#0F172A;          /* 文字色：視認性が高く洗練されたディープスレート */
+  --muted:#475569;         /* 補助文字色：穏やかで知的なミッドナイトグレー */
+  --border:#E0F2FE;        /* 枠線：透き通る水面のような境界線 */
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);line-height:1.8;font-size:16px}
+
+nav{background:rgba(255,255,255,.96);border-bottom:2px solid var(--border);padding:0 1.5rem;position:sticky;top:0;z-index:100;backdrop-filter:blur(8px)}
+.nav-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;gap:1rem}
+.nav-logo{text-decoration:none;flex-shrink:0}
+.nav-logo .company{font-size:10px;font-weight:400;color:var(--muted);letter-spacing:.1em;display:block}
+.nav-logo .office{font-family:'Noto Serif JP',serif;font-size:17px;font-weight:600;color:var(--sea-dark);letter-spacing:.04em;display:block}
+.nav-logo .en{font-size:9px;font-weight:300;color:var(--muted);letter-spacing:.12em;display:block}
+.nav-links{display:flex;gap:1.2rem;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;white-space:nowrap;transition:color .2s}
+.nav-links a:hover{color:var(--sea-dark)}
+.nav-cta{background:var(--coral);color:#fff!important;padding:8px 16px;border-radius:20px;font-weight:600;box-shadow:0 4px 10px rgba(251,146,60,.3)}
+
+.hero{position:relative;min-height:540px;display:flex;align-items:center;overflow:hidden;background:var(--sea-light)}
+.hero-img{position:absolute;inset:0;z-index:1;opacity:.7}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center center}
+/* ホワイト透過グラデーションで、明るさを引き立てつつ文字をクッキリ読ませる演出 */
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(255,255,255,0.95) 0%,rgba(255,255,255,0.6) 50%,transparent 100%);z-index:2}
+.hero-content{position:relative;z-index:3;max-width:1040px;margin:0 auto;padding:80px 1.5rem;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:var(--white);border:1px solid var(--sea);border-radius:20px;padding:6px 16px;font-size:12px;color:var(--sea-dark);font-weight:600;letter-spacing:.06em;margin-bottom:1.5rem;box-shadow:0 2px 8px rgba(14,165,233,.08)}
+.hero h1{font-family:'Noto Serif JP',serif;font-size:clamp(24px,3.8vw,42px);font-weight:600;color:var(--text);line-height:1.55;letter-spacing:.04em;margin-bottom:1.2rem;max-width:600px;word-break:keep-all}
+.hero p{font-size:15px;color:var(--muted);max-width:480px;line-height:2;font-weight:400;margin-bottom:2.2rem}
+.hero-btns{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn-main{background:var(--coral);color:#fff;padding:14px 30px;border-radius:24px;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:.04em;transition:all .2s;white-space:nowrap;display:inline-block;box-shadow:0 4px 14px rgba(251,146,60,.35)}
+.btn-main:hover{background:#f97316;transform:translateY(-1px)}
+.btn-sub{background:#fff;color:var(--sea-dark);padding:14px 30px;border-radius:24px;font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid var(--sea);transition:all .2s;white-space:nowrap;display:inline-block;box-shadow:0 4px 10px rgba(0,0,0,.02)}
+.btn-sub:hover{background:var(--sea-light);transform:translateY(-1px)}
+
+section{padding:80px 1.5rem}
+.sec{max-width:1040px;margin:0 auto}
+.sec-tag{font-size:11px;letter-spacing:.2em;color:var(--sea-dark);font-weight:700;margin-bottom:.5rem;text-transform:uppercase}
+.sec-title{font-family:'Noto Serif JP',serif;font-size:clamp(22px,3vw,30px);font-weight:600;color:var(--text);margin-bottom:2.5rem;line-height:1.45}
+.sec-title small{display:block;font-size:13px;font-family:'Noto Sans JP',sans-serif;font-weight:400;color:var(--muted);margin-top:.4rem;letter-spacing:.05em}
+
+.about-bg{background:linear-gradient(180deg,var(--sea-light) 0%,#fff 100%)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.about-vision{border-left:4px solid var(--sea);background:var(--sea-light);border-radius:0 12px 12px 0;padding:1.2rem 1.2rem 1.2rem 1.5rem;margin:1.5rem 0}
+.about-vision p{font-family:'Noto Serif JP',serif;font-size:16px;color:var(--sea-dark);line-height:1.85;font-weight:600;margin:0}
+.about-text{font-size:15px;color:var(--muted);line-height:1.9;margin-top:.8rem}
+.about-photo{border-radius:24px;overflow:hidden;box-shadow:0 12px 32px rgba(56,189,248,.12)}
+.about-photo img{width:100%;height:300px;object-fit:cover;display:block}
+
+.services-bg{background:var(--sand)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.svc-card{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .25s;display:flex;flex-direction:column;box-shadow:0 4px 15px rgba(0,0,0,.01)}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(56,189,248,.15);border-color:var(--sea)}
+
+/* 海のきらめきを表現したパステルカラーアイコンエリア */
+.svc-icon-box{height:95px;display:flex;align-items:center;justify-content:center;padding-top:1.8rem}
+.svc-icon-circle{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;transition:transform .2s}
+.svc-card:hover .svc-icon-circle{transform:scale(1.1)}
+.bg-s{background:var(--sea-light);color:var(--sea-dark)}
+.bg-c{background:var(--coral-light);color:var(--coral)}
+.bg-sun{background:var(--sun-light);color:#D97706}
+
+.svc-body{padding:1.1rem 1.4rem 1.6rem;flex:1;text-align:center}
+.svc-card h3{font-size:15px;font-weight:700;color:var(--text);margin-bottom:.60rem}
+.svc-card p{font-size:13px;color:var(--muted);line-height:1.85;text-align:left}
+
+.area-bg{position:relative;overflow:hidden;background:var(--sea-light)}
+.area-photo-wrap{position:absolute;inset:0;z-index:0}
+.area-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center center}
+/* 爽やかなエメラルドブルーのオーバーレイ */
+.area-photo-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(56,189,248,0.85),rgba(254,252,232,0.6))}
+.area-content{position:relative;z-index:1;padding:80px 1.5rem}
+.area-inner{max-width:1040px;margin:0 auto}
+.area-tags{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:1.5rem}
+.area-tag{background:rgba(255,255,255,0.6);border:1px solid #fff;border-radius:20px;padding:6px 20px;font-size:14px;color:var(--text);font-weight:500;backdrop-filter:blur(2px)}
+.area-tag.main{background:#fff;font-weight:700;color:var(--sea-dark);box-shadow:0 4px 10px rgba(0,0,0,.05)}
+
+.faq-bg{background:linear-gradient(180deg,var(--sun-light) 0%,#fff 100%)}
+.faq-list{display:flex;flex-direction:column;gap:1rem}
+.faq-item{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,.01)}
+.faq-q{padding:1.2rem 1.5rem;font-size:15px;font-weight:700;color:var(--text);cursor:pointer;display:flex;align-items:center;gap:.8rem;user-select:none;transition:background .15s}
+.faq-q:hover{background:var(--sea-light)}
+.q-badge{background:var(--coral);color:#fff;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.faq-q .chev{margin-left:auto;color:var(--muted);transition:transform .25s;flex-shrink:0;font-size:18px;line-height:1}
+.faq-item.open .chev{transform:rotate(180deg)}
+.faq-a{padding:0 1.5rem 1.2rem calc(1.5rem + 32px);font-size:14px;color:var(--muted);line-height:1.9;display:none}
+.faq-item.open .faq-a{display:block}
+
+.recruit-card{background:linear-gradient(135deg,var(--sea-light),var(--sun-light));border:1px solid var(--border);border-radius:24px;padding:3rem 2.5rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;box-shadow:0 6px 20px rgba(56,189,248,.05)}
+.recruit-title{font-family:'Noto Serif JP',serif;font-size:21px;font-weight:600;color:var(--text);margin-bottom:.6rem}
+.recruit-text{font-size:14px;color:var(--muted);line-height:1.9}
+.recruit-badges{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+.recruit-badge{background:#fff;border:1px solid var(--border);border-radius:6px;padding:4px 12px;font-size:12px;color:var(--sea-dark);font-weight:600}
+
+.access-bg{background:var(--sand)}
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.access-info h3{font-size:16px;font-weight:700;color:var(--text);margin-bottom:1.5rem}
+.access-row{display:flex;gap:1rem;margin-bottom:.8rem;font-size:14px}
+.access-label{color:var(--muted);min-width:80px;flex-shrink:0;font-weight:500}
+.access-val{color:var(--text);line-height:1.7}
+.map-ph{background:#fff;border-radius:16px;height:220px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.8rem;border:1px solid var(--border);box-shadow:0 4px 10px rgba(0,0,0,.01)}
+.map-link{display:inline-block;margin-top:1.5rem;background:var(--sea);color:#fff;padding:11px 24px;border-radius:20px;font-size:13px;font-weight:600;text-decoration:none;transition:all .2s;box-shadow:0 4px 10px rgba(56,189,248,.2)}
+.map-link:hover{background:var(--sea-dark);transform:translateY(-1px)}
+
+.contact-bg{background:linear-gradient(140deg,var(--sea) 0%,var(--sea-dark) 100%);padding:80px 1.5rem;position:relative;overflow:hidden}
+.contact-bg::before{content:'';position:absolute;top:-40px;right:-40px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.05)}
+.contact-inner{max-width:700px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.contact-box{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,.3);border-radius:24px;padding:2.5rem;margin-top:1.8rem;backdrop-filter:blur(4px)}
+.contact-box p{color:#fff;font-size:15px;line-height:1.95;margin-bottom:1.8rem;font-weight:400}
+.btn-contact{display:inline-block;background:#fff;color:var(--sea-dark);padding:15px 40px;border-radius:26px;font-size:15px;font-weight:700;text-decoration:none;letter-spacing:.04em;transition:all .2s;box-shadow:0 4px 15px rgba(0,0,0,.08)}
+.btn-contact:hover{background:var(--sea-light);color:var(--text);transform:translateY(-1px)}
+.contact-note{font-size:12px;color:rgba(255,255,255,.7);margin-top:12rem;line-height:1.9}
+
+footer{background:#0F172A;color:rgba(255,255,255,.5);padding:3rem 1.5rem;text-align:center;font-size:12px;line-height:2.3}
+footer a{color:rgba(255,255,255,.4);text-decoration:none;font-weight:500}
+footer a:hover{color:#fff}
+
+@media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.about-grid,.access-grid{grid-template-columns:1fr}.nav-links{display:none}.recruit-card{flex-direction:column;align-items:flex-start;padding:2rem 1.5rem}}
+@media(max-width:540px){.services-grid{grid-template-columns:1fr}section{padding:56px 1rem}.hero-content{padding:60px 1rem}.area-content{padding:56px 1rem}.contact-bg{padding:56px 1rem}.hero h1{font-size:23px}.btn-main,.btn-sub{width:100%;text-align:center}}
 </style>
-</head>
-<body>
 
-<header>
-<div class="container nav">
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="company">丸庄木材株式会社</span>
+      <span class="office">居宅介護支援事業所 彩</span>
+      <span class="en">TOKI CARE SUPPORT</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">事業所紹介</a></li>
+      <li><a href="#services">サービス内容</a></li>
+      <li><a href="#area">対応エリア</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+      <li><a href="#access">アクセス</a></li>
+      <li><a href="#recruit">採用情報</a></li>
+      <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
+    </ul>
+  </div>
+</nav>
 
-<a href="#" class="logo">
-<small>CARE SUPPORT OFFICE</small>
-居宅介護支援事業所 鳶
-</a>
-
-<ul class="nav-links">
-<li><a href="#about">事業所紹介</a></li>
-<li><a href="#services">サービス</a></li>
-<li><a href="#area">対応エリア</a></li>
-<li><a href="#recruit">採用情報</a></li>
-<li><a href="#faq">FAQ</a></li>
-<li><a href="#contact" class="contact-btn">お問い合わせ</a></li>
-</ul>
-
-</div>
-</header>
-
-<section class="hero">
-<div class="hero-content">
-
-<div class="hero-tag">
-大阪府岸和田市｜障がい福祉・居宅介護支援
-</div>
-
-<h1>
-障がいのある方も、<br>
-ない方も、共に笑って<br>
-社会生活を。
-</h1>
-
-<p>
-居宅介護支援事業所 鳶は、岸和田市・和泉市・泉州エリアを中心に、
-障がいのある方が地域で安心して暮らせるよう、
-心に寄り添う支援を行っています。
-</p>
-
-<div class="hero-buttons">
-<a href="#contact" class="btn-primary">無料相談はこちら</a>
-<a href="#services" class="btn-secondary">サービスを見る</a>
+<div class="hero">
+  <div class="hero-img">
+    <!-- 画像変更：ひだまりの太陽の光が優しく降り注ぐ、緑豊かな大自然の風景 -->
+    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1400&q=80" alt="暖かな太陽の光と豊かな緑の野原">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">居宅介護支援事業所 ｜ 岸和田市・堺・泉州エリア</div>
+    <h1>障がいのある人もない人も、<br>共に笑って社会生活をすごそう！</h1>
+    <p>居宅介護支援事業所 彩は、障がいのある方お一人おひとりが、住み慣れた地域で自分らしく輝けるよう、専門のスタッフが全力でサポートします。</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-main">無料相談のお申し込み</a>
+      <a href="#services" class="btn-sub">サービス内容を見る</a>
+    </div>
+  </div>
 </div>
 
-</div>
-
-<div class="wave">
-<svg viewBox="0 0 1440 180">
-<path fill="#ffffff" fill-opacity="1" d="M0,96L60,112C120,128,240,160,360,154.7C480,149,600,107,720,96C840,85,960,107,1080,122.7C1200,139,1320,149,1380,154.7L1440,160L1440,320L0,320Z"></path>
-</svg>
-</div>
-
+<section class="about-bg" id="about">
+  <div class="sec">
+    <div class="about-grid">
+      <div>
+        <p class="sec-tag">About Us</p>
+        <h2 class="sec-title">事業所紹介・理念<small>私たちについて</small></h2>
+        <div class="about-vision">
+          <p>「必要な時に必要な支援を。」<br>障がいのある方の自立と社会参加を支援します。</p>
+        </div>
+        <p class="about-text">丸庄木材株式会社が運営する居宅介護支援事業所 彩は、岸和田市新港町に拠点を置き、身体障がい・知的障がい・精神障がい・発達障がいのある方の在宅生活を幅広く支援しています。</p>
+        <p class="about-text">「彩」の名のように、障がいのある人の生活に彩りをつけ、「その人らしさ」を大切に。障がいのある方の自立と社会参加を支援します。ご本人・ご家族・医療機関・各支援機関をつなぎ、最適なサービスをご提供します。どうぞお気軽にご相談ください。</p>
+      </div>
+      <div class="about-photo">
+        <!-- 画像変更：明るい光の中で優しく手を包み込む、安心感あふれる介護・福祉イメージ -->
+        <img src="https://images.unsplash.com/photo-1581579438747-1dc8d1e0ca96?w=800&q=80" alt="優しく手を包み込むサポートのイメージ">
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="about" id="about">
-<div class="container">
+<section class="services-bg" id="services">
+  <div class="sec">
+    <p class="sec-tag">Services</p>
+    <h2 class="sec-title">サービス内容<small>私たちが提供するサポート</small></h2>
+    <div class="services-grid">
 
-<div class="section-title">
-<span>ABOUT</span>
-<h2>私たちについて</h2>
-</div>
+      <!-- 居宅介護 -->
+      <div class="svc-card">
+        <div class="svc-icon-box">
+          <div class="svc-icon-circle bg-s">
+            <span class="material-symbols-outlined" style="font-size:inherit">home</span>
+          </div>
+        </div>
+        <div class="svc-body">
+          <h3>居宅介護（ホームヘルプ）</h3>
+          <p>ホームヘルパーがご自宅を訪問し、身体介護・家事援助・通院介助を行います。日常生活全般をきめ細かくサポートします。</p>
+        </div>
+      </div>
 
-<div class="about-grid">
+      <!-- 移動支援 -->
+      <div class="svc-card">
+        <div class="svc-icon-box">
+          <div class="svc-icon-circle bg-c">
+            <span class="material-symbols-outlined" style="font-size:inherit">directions_walk</span>
+          </div>
+        </div>
+        <div class="svc-body">
+          <h3>移動支援（ガイドヘルパー）</h3>
+          <p>外出を必要とする障がいのある方に、ガイドヘルパーが同行して移動をサポートします。買い物・余暇活動・地域行事への参加を支援します。</p>
+        </div>
+      </div>
 
-<div class="about-image">
-<img src="https://images.unsplash.com/photo-1516575150278-77136aed6920?q=80&w=1200&auto=format&fit=crop" alt="介護支援">
-</div>
+      <!-- 同行援護 -->
+      <div class="svc-card">
+        <div class="svc-icon-box">
+          <div class="svc-icon-circle bg-sun">
+            <span class="material-symbols-outlined" style="font-size:inherit">visibility</span>
+          </div>
+        </div>
+        <div class="svc-body">
+          <h3>同行援護</h3>
+          <p>視覚障がいのある方が外出する際に同行し、移動中の情報提供・代読・代筆などを行います。安心して外出できるよう全面的に支援します。</p>
+        </div>
+      </div>
 
-<div class="about-content">
-<h3>
-地域に寄り添い、
-一人ひとりの人生を支える。
-</h3>
+      <!-- 行動援護 -->
+      <div class="svc-card">
+        <div class="svc-icon-box">
+          <div class="svc-icon-circle bg-c">
+            <span class="material-symbols-outlined" style="font-size:inherit">favorite</span>
+          </div>
+        </div>
+        <div class="svc-body">
+          <h3>行動援護</h3>
+          <p>知的障がい・精神障がいにより行動が困難な方に対し、危険回避のための援護・外出時の移動支援・排泄・食事の介護を行います。</p>
+        </div>
+      </div>
 
-<p>
-私たちは、障がいのある方が住み慣れた地域で安心して暮らせるよう、居宅介護・移動支援・同行援護・共同生活援助など、幅広い福祉サービスを提供しています。
-</p>
+      <!-- グループホーム -->
+      <div class="svc-card">
+        <div class="svc-icon-box">
+          <div class="svc-icon-circle bg-s">
+            <span class="material-symbols-outlined" style="font-size:inherit">diversity_3</span>
+          </div>
+        </div>
+        <div class="svc-body">
+          <h3>共同生活援助（グループホーム）</h3>
+          <p>障がいのある方が少人数で共同生活を送りながら、日常生活上の相談・入浴・排泄・食事の介護など必要な支援を受けられる住まいです。</p>
+        </div>
+      </div>
 
-<p>
-ご本人だけでなく、ご家族の想いにも寄り添い、医療機関や関係機関と連携しながら、安心できる生活環境づくりをサポートします。
-</p>
+      <!-- 総合相談 -->
+      <div class="svc-card">
+        <div class="svc-icon-box">
+          <div class="svc-icon-circle bg-sun">
+            <span class="material-symbols-outlined" style="font-size:inherit">forum</span>
+          </div>
+        </div>
+        <div class="svc-body">
+          <h3>障がいに関する総合相談</h3>
+          <p>「何から始めればいい？」「今のサービスを変えたい」など、障がい福祉全全般のご相談を無料で承ります。どうぞお気軽にお問い合わせください。</p>
+        </div>
+      </div>
 
-<p>
-「相談してよかった」と思っていただける事業所を目指しています。
-</p>
-
-</div>
-
-</div>
-
-</div>
+    </div>
+  </div>
 </section>
 
-<section class="services" id="services">
-<div class="container">
-
-<div class="section-title">
-<span>SERVICE</span>
-<h2>サービス内容</h2>
+<div class="area-bg" id="area">
+  <div class="area-photo-wrap">
+    <!-- 画像変更：青空のもとに広がる、明るく開放的な美しいお花畑の風景 -->
+    <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=1400&q=80" alt="明るく美しいお花畑と青空">
+  </div>
+  <div class="area-content">
+    <div class="area-inner">
+      <p class="sec-tag" style="color:var(--text); opacity:0.8">Service Area</p>
+      <h2 class="sec-title" style="color:var(--text)">対応エリア<small style="color:var(--muted)">泉州エリアを中心に広くサポート</small></h2>
+      <div class="area-tags">
+        <span class="area-tag main">岸和田市（拠点）</span>
+        <span class="area-tag">和泉市</span>
+        <span class="area-tag">貝塚市</span>
+        <span class="area-tag">堺市</span>
+        <span class="area-tag">その他近隣地域</span>
+      </div>
+      <p style="font-size:14px;color:var(--text);line-height:1.95;font-weight:500;margin-top:1rem;">上記エリア以外の近隣地域の方もまずはご相談ください。状況によって対応可能な場合があります。<br>岸和田市木材町を拠点に、泉州エリアの皆さまの在宅生活を支援しています。</p>
+    </div>
+  </div>
 </div>
 
-<div class="service-grid">
-
-<div class="service-card">
-<div class="service-icon">♿</div>
-<h3>居宅介護</h3>
-<p>
-身体介護・家事援助・通院介助など、ご自宅で安心して生活できるようサポートします。
-</p>
-</div>
-
-<div class="service-card">
-<div class="service-icon">🧑‍🦯</div>
-<h3>同行援護</h3>
-<p>
-視覚障がいのある方の外出を支援し、安全で安心できる移動をサポートします。
-</p>
-</div>
-
-<div class="service-card">
-<div class="service-icon">🚗</div>
-<h3>移動支援</h3>
-<p>
-買い物や通院、余暇活動など、地域での外出を支援します。
-</p>
-</div>
-
-<div class="service-card">
-<div class="service-icon">🧍</div>
-<h3>行動援護</h3>
-<p>
-危険回避や外出時の支援など、行動に困難がある方をサポートします。
-</p>
-</div>
-
-<div class="service-card">
-<div class="service-icon">🏠</div>
-<h3>共同生活援助</h3>
-<p>
-グループホームでの日常生活支援を行い、自立した生活を支えます。
-</p>
-</div>
-
-<div class="service-card">
-<div class="service-icon">🛏️</div>
-<h3>短期入所</h3>
-<p>
-短期間の宿泊支援を通じて、ご本人とご家族をサポートします。
-</p>
-</div>
-
-</div>
-
-</div>
+<section class="faq-bg" id="faq">
+  <div class="sec">
+    <p class="sec-tag">FAQ</p>
+    <h2 class="sec-title">よくある質問<small>障がい福祉サービスに関するご不明点を解消します</small></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="q-badge">Q</span>どのような障がいのある方が利用できますか？<span class="chev">⌄</span></div>
+        <div class="faq-a">身体障がい・知的障がい・精神障がい・発達障がい・難病など、障がいの種別にかかわらずご利用いただけます。手帳の有無も問いません。まずはお気軽にご連絡ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="q-badge">Q</span>サービスの利用にはどんな手続きが必要ですか？<span class="chev">⌄</span></div>
+        <div class="faq-a">まず障害支援区分の認定を受ける必要があります。市区町村への申請・調査・審査を経て区分が決定します。申請の手続きについても当事業所でサポートいたします。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="q-badge">Q</span>利用者の自己負担はありますか？<span class="chev">⌄</span></div>
+        <div class="faq-a">原則としてサービス費用の1割が自己負担となりますが、収入に応じた月額上限額が設けられているため、大きな負担なくご利用いただけます。生活保護受給者や低所得の方は自己負担が0円になる場合もあります。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="q-badge">Q</span>家族だけで相談に来ることはできますか？<span class="chev">⌄</span></div>
+        <div class="faq-a">はい、ご本人が来られない場合でも、ご家族だけでご相談いただけます。「子どもの将来が不安」「サービスの選び方がわからない」など、ご家族からのご相談も多くいただいています。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="q-badge">Q</span>子ども（18歳未満）も対応していますか？<span class="chev">⌄</span></div>
+        <div class="faq-a">はい、障がいのあるお子さまの支援にも対応しています。放課後等デイサービスや児童発達支援など、お子さまに適したサービスの利用調整も行います。</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="area" id="area">
-<div class="container area-wrap">
-
-<div class="section-title">
-<span>AREA</span>
-<h2>対応エリア</h2>
-</div>
-
-<p class="area-text">
-岸和田市を中心に、大阪府泉州エリアで幅広く対応しています。
-</p>
-
-<div class="area-tags">
-<span>岸和田市</span>
-<span>和泉市</span>
-<span>泉大津市</span>
-<span>貝塚市</span>
-<span>忠岡町</span>
-<span>堺市</span>
-</div>
-
-</div>
+<section id="recruit">
+  <div class="sec">
+    <p class="sec-tag">Recruit</p>
+    <h2 class="sec-title">採用情報<small>ともに地域を支える仲間を募集しています</small></h2>
+    <div class="recruit-card">
+      <div>
+        <p class="recruit-title">正社員・介護スタッフ・ヘルパー 募集</p>
+        <p class="recruit-text">障がいのある方の「自分らしい生活」を支えるやりがいのある仕事です。<br>経験者はもちろん、ブランクのある方・転職希望の方もご相談ください。</p>
+        <div class="recruit-badges">
+          <span class="recruit-badge">正社員</span>
+          <span class="recruit-badge">介護スタッフ</span>
+          <span class="recruit-badge">ヘルパー</span>
+          <span class="recruit-badge">経験者優遇</span>
+          <span class="recruit-badge">ブランク可</span>
+          <span class="recruit-badge">資格取得支援あり</span>
+        </div>
+      </div>
+      <a href="#contact" class="btn-main" style="flex-shrink:0">採用のお問い合わせ</a>
+    </div>
+  </div>
 </section>
 
-<section class="recruit" id="recruit">
-<div class="container">
-
-<div class="section-title">
-<span>RECRUIT</span>
-<h2>採用情報</h2>
-</div>
-
-<div class="recruit-grid">
-
-<div class="recruit-card">
-<img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop" alt="パート募集">
-<div class="recruit-body">
-<h3>パート募集</h3>
-<p>
-ライフスタイルに合わせた柔軟な働き方が可能です。
-</p>
-<a href="#contact">詳細を見る</a>
-</div>
-</div>
-
-<div class="recruit-card">
-<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop" alt="正社員募集">
-<div class="recruit-body">
-<h3>正社員募集</h3>
-<p>
-安定して長く働きたい方を歓迎しています。
-</p>
-<a href="#contact">詳細を見る</a>
-</div>
-</div>
-
-<div class="recruit-card">
-<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop" alt="未経験OK">
-<div class="recruit-body">
-<h3>未経験OK</h3>
-<p>
-研修制度・サポート体制が整っているので安心です。
-</p>
-<a href="#contact">詳細を見る</a>
-</div>
-</div>
-
-</div>
-
-</div>
+<section class="access-bg" id="access">
+  <div class="sec">
+    <p class="sec-tag">Access</p>
+    <h2 class="sec-title">アクセス・地図<small>お気軽にお越しください</small></h2>
+    <div class="access-grid">
+      <div class="access-info">
+        <h3>丸庄木材株式会社　居宅介護支援事業所 彩</h3>
+        <div class="access-row"><span class="access-label">住所</span><span class="access-val">〒596-0011<br>大阪府岸和田市新港町16−4</span></div>
+        <div class="access-row"><span class="access-label">電話</span><span class="access-val">（072）439-3329</span></div>
+        <div class="access-row"><span class="access-label">受付時間</span><span class="access-val"> 9:00〜18:00</span></div>
+        <div class="access-row"><span class="access-label">定休日</span><span class="access-val">年末年始（緊急時を除く）</span></div>
+        <a href="https://www.google.com/maps/search/大阪府岸和田市新港町16−4" target="_blank" rel="noopener" class="map-link">Google マップで見る</a>
+      </div>
+      <div>
+        <div class="map-ph">
+          <div style="font-size:36px">📍</div>
+          <p style="font-size:13px;color:var(--sea-dark);font-weight:600">大阪府岸和田市木材町17−1</p>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin-top:.8rem;line-height:1.8">※ 実際のページではGoogleマップを埋め込みます</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="faq" id="faq">
-<div class="container">
-
-<div class="section-title">
-<span>FAQ</span>
-<h2>よくある質問</h2>
+<div class="contact-bg" id="contact">
+  <div class="contact-inner">
+    <p class="sec-tag" style="color:rgba(255,255,255,.8)">Contact</p>
+    <h2 class="sec-title" style="color:#fff">お問い合わせ<small style="color:rgba(255,255,255,.7)">障がいのこと、なんでもご相談ください</small></h2>
+    <div class="contact-box">
+      <p>サービスに関するご質問、利用のご相談、採用に関するお問い合わせなど、<br>下記のフォームよりお気軽にご連絡ください。<br>通常2営業日以内にご返信いたします。</p>
+      <a href="https://forms.google.com/" target="_blank" rel="noopener" class="btn-contact">お問い合わせフォームへ</a>
+      <p class="contact-note">※ Googleフォームが開きます。個人情報は適切に管理いたします。<br>お急ぎの方はお電話でもご連絡いただけます。</p>
+    </div>
+  </div>
 </div>
-
-<div class="faq-list">
-
-<div class="faq-item">
-<h3>Q. 相談だけでも可能ですか？</h3>
-<p>
-はい。サービス利用前のご相談だけでもお気軽にお問い合わせください。
-</p>
-</div>
-
-<div class="faq-item">
-<h3>Q. どのような障がいに対応していますか？</h3>
-<p>
-身体障がい・知的障がい・精神障がい・発達障がいなど幅広く対応しています。
-</p>
-</div>
-
-<div class="faq-item">
-<h3>Q. 家族だけの相談でも大丈夫ですか？</h3>
-<p>
-もちろん可能です。ご家族からのご相談も多くいただいております。
-</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<section class="contact" id="contact">
-<div class="contact-inner">
-
-<h2>
-お気軽にご相談ください
-</h2>
-
-<p>
-サービス利用・採用・福祉に関するご相談など、
-まずはお気軽にお問い合わせください。
-</p>
-
-<a href="#">
-お問い合わせフォーム
-</a>
-
-</div>
-</section>
 
 <footer>
-<div class="container footer-grid">
-
-<div>
-<div class="footer-logo">居宅介護支援事業所 鳶</div>
-<p>
-障がいのある方もない方も、
-共に笑って社会生活を。
-</p>
-</div>
-
-<div class="footer-info">
-<p>〒596-0011</p>
-<p>大阪府岸和田市木材町17-1</p>
-<p>TEL：000-0000-0000</p>
-<p>MAIL：0000@gmail.com</p>
-</div>
-
-</div>
-
-<div class="copy">
-© 2026 居宅介護支援事業所 鳶 All Rights Reserved.
-</div>
-
+  <p>丸庄木材株式会社　居宅介護支援事業所 彩</p>
+  <p>〒596-0011 大阪府岸和田市木材町17−1</p>
+  <p style="margin-top:.5rem"><a href="#about">事業所紹介</a> ｜ <a href="#services">サービス内容</a> ｜ <a href="#faq">よくある質問</a> ｜ <a href="#access">アクセス</a> ｜ <a href="#contact">お問い合わせ</a></p>
+  <p style="margin-top:.5rem">© 2026 〇〇〇〇株式会社 All Rights Reserved.</p>
 </footer>
-
-</body>
-</html>
-```
