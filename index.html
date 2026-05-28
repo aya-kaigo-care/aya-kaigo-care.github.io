@@ -1,145 +1,55 @@
+```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="description" content="居宅介護支援事業所 鳶｜大阪府岸和田市を中心に、障がい福祉・居宅介護・移動支援・同行援護・グループホーム支援を行っています。">
 <title>居宅介護支援事業所 鳶</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Old+Mincho:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
 
+:root{
+--blue:#0f6fd6;
+--deepBlue:#004a99;
+--sky:#57b9ff;
+--pink:#ff5f97;
+--green:#45b56a;
+--white:#ffffff;
+--text:#24344d;
+--light:#f6fbff;
+--shadow:0 10px 35px rgba(0,0,0,.08);
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
-font-family:"Yu Gothic",sans-serif;
-background:#f4fffd;
-color:#333;
+font-family:'Noto Sans JP',sans-serif;
+color:var(--text);
+background:#fff;
 line-height:1.8;
 overflow-x:hidden;
 }
 
-/* ===== 背景装飾 ===== */
-
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background:
-linear-gradient(rgba(255,255,255,0.35),rgba(255,255,255,0.35)),
-url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1974&auto=format&fit=crop");
-background-size:cover;
-background-position:center;
-z-index:-2;
+img{
+max-width:100%;
+display:block;
 }
-
-body::after{
-content:"";
-position:fixed;
-inset:0;
-backdrop-filter:blur(2px);
-z-index:-1;
-}
-
-/* ===== ナビ ===== */
-
-nav{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:18px 30px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,0.25);
-backdrop-filter:blur(10px);
-z-index:999;
-}
-
-.logo{
-font-size:1.3rem;
-font-weight:bold;
-color:white;
-}
-
-nav ul{
-display:flex;
-gap:25px;
-list-style:none;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
-}
-
-nav a:hover{
-opacity:0.7;
-}
-
-/* ===== メイン ===== */
-
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:120px 20px;
-position:relative;
-}
-
-.hero-content{
-max-width:900px;
-background:rgba(255,255,255,0.15);
-padding:60px 30px;
-border-radius:30px;
-backdrop-filter:blur(10px);
-box-shadow:0 8px 30px rgba(0,0,0,0.2);
-}
-
-.hero h1{
-font-size:4rem;
-color:white;
-margin-bottom:20px;
-text-shadow:0 4px 10px rgba(0,0,0,0.3);
-}
-
-.hero p{
-font-size:1.4rem;
-color:white;
-text-shadow:0 2px 6px rgba(0,0,0,0.3);
-}
-
-/* ===== 波 ===== */
-
-.wave{
-position:absolute;
-bottom:0;
-left:0;
-width:100%;
-overflow:hidden;
-line-height:0;
-}
-
-.wave svg{
-width:100%;
-height:140px;
-}
-
-/* ===== セクション ===== */
 
 section{
-padding:100px 20px;
+padding:90px 20px;
+position:relative;
 }
 
 .container{
@@ -147,43 +57,261 @@ max-width:1200px;
 margin:auto;
 }
 
+/* NAV */
+
+header{
+position:fixed;
+width:100%;
+top:0;
+left:0;
+z-index:999;
+background:rgba(255,255,255,.92);
+backdrop-filter:blur(10px);
+box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+height:78px;
+}
+
+.logo{
+font-family:'Zen Old Mincho',serif;
+font-size:26px;
+font-weight:700;
+color:var(--deepBlue);
+text-decoration:none;
+}
+
+.logo small{
+display:block;
+font-size:11px;
+font-family:'Noto Sans JP',sans-serif;
+letter-spacing:.15em;
+color:#777;
+}
+
+.nav-links{
+display:flex;
+gap:28px;
+list-style:none;
+}
+
+.nav-links a{
+text-decoration:none;
+color:var(--deepBlue);
+font-weight:500;
+font-size:15px;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:var(--pink);
+}
+
+.contact-btn{
+background:linear-gradient(135deg,var(--pink),#ff8eb5);
+color:#fff !important;
+padding:12px 22px;
+border-radius:999px;
+box-shadow:0 10px 20px rgba(255,95,151,.25);
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+min-height:780px;
+display:flex;
+align-items:center;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1800&auto=format&fit=crop') center/cover;
+z-index:0;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+inset:0;
+background:linear-gradient(to right,rgba(0,52,110,.65),rgba(0,52,110,.15));
+z-index:1;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+width:100%;
+}
+
+.hero-tag{
+display:inline-block;
+background:rgba(255,255,255,.2);
+backdrop-filter:blur(8px);
+border:1px solid rgba(255,255,255,.4);
+color:#fff;
+padding:10px 20px;
+border-radius:999px;
+font-size:14px;
+margin-bottom:28px;
+}
+
+.hero h1{
+font-family:'Zen Old Mincho',serif;
+font-size:clamp(40px,6vw,72px);
+line-height:1.4;
+color:#fff;
+margin-bottom:24px;
+text-shadow:0 5px 25px rgba(0,0,0,.3);
+}
+
+.hero p{
+max-width:640px;
+font-size:18px;
+color:rgba(255,255,255,.92);
+margin-bottom:38px;
+}
+
+.hero-buttons{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.hero-buttons a{
+text-decoration:none;
+padding:16px 34px;
+border-radius:999px;
+font-weight:700;
+transition:.3s;
+}
+
+.btn-primary{
+background:linear-gradient(135deg,#ff5f97,#ff8fb4);
+color:#fff;
+box-shadow:0 15px 30px rgba(255,95,151,.25);
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+}
+
+.btn-secondary{
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.5);
+color:#fff;
+}
+
+.wave{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+line-height:0;
+z-index:5;
+}
+
+/* SECTION TITLE */
+
 .section-title{
 text-align:center;
-font-size:2.6rem;
 margin-bottom:60px;
-color:#006d77;
-position:relative;
 }
 
-.section-title::after{
-content:"🌺";
-display:block;
-margin-top:10px;
-font-size:2rem;
+.section-title span{
+color:var(--pink);
+font-weight:700;
+letter-spacing:.2em;
+font-size:13px;
 }
 
-/* ===== ガラスカード ===== */
-
-.glass{
-background:rgba(255,255,255,0.2);
-border:1px solid rgba(255,255,255,0.3);
-backdrop-filter:blur(12px);
-border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+.section-title h2{
+font-family:'Zen Old Mincho',serif;
+font-size:42px;
+margin-top:14px;
+color:var(--deepBlue);
 }
 
-/* ===== サービス ===== */
+/* ABOUT */
+
+.about{
+background:linear-gradient(to bottom,#ffffff,#eef8ff);
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.about-image{
+border-radius:30px;
+overflow:hidden;
+box-shadow:var(--shadow);
+}
+
+.about-image img{
+height:100%;
+object-fit:cover;
+}
+
+.about-content h3{
+font-family:'Zen Old Mincho',serif;
+font-size:34px;
+line-height:1.7;
+margin-bottom:28px;
+color:var(--deepBlue);
+}
+
+.about-content p{
+margin-bottom:18px;
+font-size:16px;
+}
+
+/* SERVICES */
+
+.services{
+background:#fff;
+}
 
 .service-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:25px;
+grid-template-columns:repeat(3,1fr);
+gap:28px;
 }
 
 .service-card{
-padding:35px 25px;
+background:#fff;
+border-radius:26px;
+padding:40px 28px;
 text-align:center;
-transition:0.4s;
+box-shadow:var(--shadow);
+transition:.35s;
+position:relative;
+overflow:hidden;
+}
+
+.service-card::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:6px;
+background:linear-gradient(90deg,var(--sky),var(--pink));
 }
 
 .service-card:hover{
@@ -191,417 +319,610 @@ transform:translateY(-10px);
 }
 
 .service-icon{
-font-size:3rem;
-margin-bottom:20px;
+width:95px;
+height:95px;
+border-radius:50%;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:42px;
+margin-bottom:24px;
+background:linear-gradient(135deg,#eef7ff,#ffffff);
+box-shadow:0 8px 25px rgba(0,0,0,.05);
 }
 
 .service-card h3{
-margin-bottom:15px;
-color:#0077b6;
-font-size:1.3rem;
+font-size:22px;
+margin-bottom:14px;
+color:var(--deepBlue);
 }
 
 .service-card p{
-font-size:0.95rem;
+font-size:15px;
+color:#5d6a7b;
 }
 
-/* ===== エリア ===== */
+/* AREA */
+
+.area{
+background:linear-gradient(135deg,#009dff,#0054a8);
+color:#fff;
+overflow:hidden;
+}
+
+.area::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+right:-200px;
+top:-120px;
+}
+
+.area .section-title h2,
+.area .section-title span{
+color:#fff;
+}
 
 .area-wrap{
+text-align:center;
+}
+
+.area-text{
+font-size:20px;
+margin-bottom:35px;
+}
+
+.area-tags{
 display:flex;
-flex-wrap:wrap;
 justify-content:center;
-gap:18px;
+flex-wrap:wrap;
+gap:16px;
 }
 
-.area-item{
-padding:16px 28px;
+.area-tags span{
+background:rgba(255,255,255,.18);
+padding:14px 26px;
 border-radius:999px;
-background:rgba(255,255,255,0.25);
 backdrop-filter:blur(10px);
-font-weight:bold;
-color:#006d77;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+border:1px solid rgba(255,255,255,.2);
+font-weight:700;
 }
 
-/* ===== 採用 ===== */
+/* RECRUIT */
+
+.recruit{
+background:linear-gradient(to bottom,#ffffff,#f3fbff);
+}
 
 .recruit-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+grid-template-columns:repeat(3,1fr);
+gap:28px;
 }
 
 .recruit-card{
+background:#fff;
+border-radius:26px;
 overflow:hidden;
-transition:0.4s;
+box-shadow:var(--shadow);
+transition:.35s;
 }
 
 .recruit-card:hover{
 transform:translateY(-8px);
 }
 
-.recruit-image{
-height:220px;
-background-size:cover;
-background-position:center;
+.recruit-card img{
+height:250px;
+width:100%;
+object-fit:cover;
 }
 
-.recruit-content{
-padding:30px;
+.recruit-body{
+padding:28px;
 }
 
-.recruit-content h3{
-margin-bottom:15px;
-font-size:1.5rem;
-color:#0077b6;
+.recruit-body h3{
+font-size:28px;
+margin-bottom:12px;
+color:var(--deepBlue);
 }
 
-/* ===== 問い合わせ ===== */
-
-.contact-box{
-padding:50px;
-text-align:center;
+.recruit-body p{
+font-size:15px;
+margin-bottom:18px;
+color:#5c6878;
 }
 
-.contact-box p{
-margin-bottom:30px;
-font-size:1.1rem;
-}
-
-.contact-button{
+.recruit-body a{
 display:inline-block;
-padding:18px 40px;
-background:#00b4d8;
-color:white;
-border-radius:999px;
 text-decoration:none;
-font-weight:bold;
-transition:0.3s;
+padding:12px 22px;
+border-radius:999px;
+background:linear-gradient(135deg,var(--sky),var(--blue));
+color:#fff;
+font-weight:700;
 }
 
-.contact-button:hover{
-transform:scale(1.05);
+/* FAQ */
+
+.faq{
+background:#fff;
 }
 
-/* ===== フッター ===== */
+.faq-list{
+max-width:900px;
+margin:auto;
+}
+
+.faq-item{
+background:#fff;
+border-radius:20px;
+padding:24px 28px;
+margin-bottom:18px;
+box-shadow:var(--shadow);
+}
+
+.faq-item h3{
+color:var(--deepBlue);
+margin-bottom:12px;
+font-size:18px;
+}
+
+/* CONTACT */
+
+.contact{
+background:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1800&auto=format&fit=crop') center/cover;
+position:relative;
+}
+
+.contact::before{
+content:'';
+position:absolute;
+inset:0;
+background:rgba(0,70,140,.75);
+}
+
+.contact-inner{
+position:relative;
+z-index:2;
+max-width:900px;
+margin:auto;
+text-align:center;
+color:#fff;
+}
+
+.contact h2{
+font-family:'Zen Old Mincho',serif;
+font-size:48px;
+margin-bottom:22px;
+}
+
+.contact p{
+font-size:18px;
+margin-bottom:35px;
+}
+
+.contact a{
+display:inline-block;
+text-decoration:none;
+padding:18px 40px;
+border-radius:999px;
+background:#fff;
+color:var(--deepBlue);
+font-weight:700;
+font-size:18px;
+box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+
+/* FOOTER */
 
 footer{
-background:rgba(0,0,0,0.4);
-color:white;
+background:#00315f;
+color:rgba(255,255,255,.8);
+padding:50px 20px;
+}
+
+.footer-grid{
+display:flex;
+justify-content:space-between;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.footer-logo{
+font-family:'Zen Old Mincho',serif;
+font-size:28px;
+margin-bottom:14px;
+}
+
+.footer-info p{
+margin-bottom:6px;
+}
+
+.copy{
 text-align:center;
-padding:60px 20px;
-backdrop-filter:blur(10px);
+margin-top:40px;
+font-size:13px;
+opacity:.7;
 }
 
-footer p{
-margin-bottom:10px;
+/* MOBILE */
+
+@media(max-width:980px){
+
+.about-grid,
+.service-grid,
+.recruit-grid{
+grid-template-columns:1fr;
 }
 
-/* ===== ハイビスカス ===== */
-
-.flower{
-position:absolute;
-font-size:5rem;
-opacity:0.9;
+.hero{
+min-height:680px;
 }
-
-.flower1{
-top:120px;
-left:20px;
-}
-
-.flower2{
-bottom:100px;
-right:20px;
-}
-
-/* ===== スマホ ===== */
-
-@media(max-width:768px){
 
 .hero h1{
-font-size:2.4rem;
+font-size:42px;
+}
+
+.nav-links{
+display:none;
+}
+
+.about-content h3{
+font-size:28px;
+}
+
+.section-title h2{
+font-size:34px;
+}
+
+.contact h2{
+font-size:36px;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero-buttons a{
+width:100%;
+text-align:center;
 }
 
 .hero p{
-font-size:1rem;
+font-size:16px;
 }
 
-nav{
-flex-direction:column;
-gap:15px;
+.service-card,
+.recruit-body,
+.faq-item{
+padding:24px;
 }
 
-nav ul{
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
-}
-
-.section-title{
-font-size:2rem;
+section{
+padding:70px 18px;
 }
 
 }
 
 </style>
 </head>
-
 <body>
 
-<!-- ===== ナビ ===== -->
+<header>
+<div class="container nav">
 
-<nav>
-
-<div class="logo">
+<a href="#" class="logo">
+<small>CARE SUPPORT OFFICE</small>
 居宅介護支援事業所 鳶
-</div>
+</a>
 
-<ul>
-<li><a href="#service">サービス</a></li>
+<ul class="nav-links">
+<li><a href="#about">事業所紹介</a></li>
+<li><a href="#services">サービス</a></li>
 <li><a href="#area">対応エリア</a></li>
 <li><a href="#recruit">採用情報</a></li>
-<li><a href="#contact">お問い合わせ</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#contact" class="contact-btn">お問い合わせ</a></li>
 </ul>
 
-</nav>
+</div>
+</header>
 
-<!-- ===== メイン ===== -->
-
-<header class="hero">
-
-<div class="flower flower1">🌺</div>
-<div class="flower flower2">🌺</div>
-
+<section class="hero">
 <div class="hero-content">
 
+<div class="hero-tag">
+大阪府岸和田市｜障がい福祉・居宅介護支援
+</div>
+
 <h1>
-居宅介護支援事業所 鳶
+障がいのある方も、<br>
+ない方も、共に笑って<br>
+社会生活を。
 </h1>
 
 <p>
-障害のある人もない人も<br>
-共に笑って社会生活をすごしたい
+居宅介護支援事業所 鳶は、岸和田市・和泉市・泉州エリアを中心に、
+障がいのある方が地域で安心して暮らせるよう、
+心に寄り添う支援を行っています。
 </p>
+
+<div class="hero-buttons">
+<a href="#contact" class="btn-primary">無料相談はこちら</a>
+<a href="#services" class="btn-secondary">サービスを見る</a>
+</div>
 
 </div>
 
 <div class="wave">
-
-<svg viewBox="0 0 1440 320">
-<path fill="#f4fffd" fill-opacity="1"
-d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,218.7C672,235,768,245,864,224C960,203,1056,149,1152,128C1248,107,1344,117,1392,122.7L1440,128L1440,320L0,320Z">
-</path>
+<svg viewBox="0 0 1440 180">
+<path fill="#ffffff" fill-opacity="1" d="M0,96L60,112C120,128,240,160,360,154.7C480,149,600,107,720,96C840,85,960,107,1080,122.7C1200,139,1320,149,1380,154.7L1440,160L1440,320L0,320Z"></path>
 </svg>
+</div>
+
+</section>
+
+<section class="about" id="about">
+<div class="container">
+
+<div class="section-title">
+<span>ABOUT</span>
+<h2>私たちについて</h2>
+</div>
+
+<div class="about-grid">
+
+<div class="about-image">
+<img src="https://images.unsplash.com/photo-1516575150278-77136aed6920?q=80&w=1200&auto=format&fit=crop" alt="介護支援">
+</div>
+
+<div class="about-content">
+<h3>
+地域に寄り添い、
+一人ひとりの人生を支える。
+</h3>
+
+<p>
+私たちは、障がいのある方が住み慣れた地域で安心して暮らせるよう、居宅介護・移動支援・同行援護・共同生活援助など、幅広い福祉サービスを提供しています。
+</p>
+
+<p>
+ご本人だけでなく、ご家族の想いにも寄り添い、医療機関や関係機関と連携しながら、安心できる生活環境づくりをサポートします。
+</p>
+
+<p>
+「相談してよかった」と思っていただける事業所を目指しています。
+</p>
 
 </div>
 
-</header>
+</div>
 
-<!-- ===== サービス ===== -->
+</div>
+</section>
 
-<section id="service">
-
+<section class="services" id="services">
 <div class="container">
 
-<h2 class="section-title">
-サービス内容
-</h2>
+<div class="section-title">
+<span>SERVICE</span>
+<h2>サービス内容</h2>
+</div>
 
 <div class="service-grid">
 
-<div class="service-card glass">
-<div class="service-icon">🧑‍🦽</div>
+<div class="service-card">
+<div class="service-icon">♿</div>
 <h3>居宅介護</h3>
-<p>身体・家事・通院支援を行います。</p>
+<p>
+身体介護・家事援助・通院介助など、ご自宅で安心して生活できるようサポートします。
+</p>
 </div>
 
-<div class="service-card glass">
-<div class="service-icon">🏠</div>
-<h3>訪問介護</h3>
-<p>ご自宅で安心した生活を支援します。</p>
+<div class="service-card">
+<div class="service-icon">🧑‍🦯</div>
+<h3>同行援護</h3>
+<p>
+視覚障がいのある方の外出を支援し、安全で安心できる移動をサポートします。
+</p>
 </div>
 
-<div class="service-card glass">
+<div class="service-card">
 <div class="service-icon">🚗</div>
 <h3>移動支援</h3>
-<p>外出や移動をサポートします。</p>
+<p>
+買い物や通院、余暇活動など、地域での外出を支援します。
+</p>
 </div>
 
-<div class="service-card glass">
-<div class="service-icon">🚶</div>
+<div class="service-card">
+<div class="service-icon">🧍</div>
 <h3>行動援護</h3>
-<p>安全な行動を支援します。</p>
+<p>
+危険回避や外出時の支援など、行動に困難がある方をサポートします。
+</p>
 </div>
 
-<div class="service-card glass">
-<div class="service-icon">🦯</div>
-<h3>同行援護</h3>
-<p>視覚障害のある方をサポートします。</p>
+<div class="service-card">
+<div class="service-icon">🏠</div>
+<h3>共同生活援助</h3>
+<p>
+グループホームでの日常生活支援を行い、自立した生活を支えます。
+</p>
 </div>
 
-<div class="service-card glass">
+<div class="service-card">
 <div class="service-icon">🛏️</div>
 <h3>短期入所</h3>
-<p>ショートステイ支援を行います。</p>
-</div>
-
-<div class="service-card glass">
-<div class="service-icon">🏡</div>
-<h3>共同生活援助</h3>
-<p>グループホーム支援を行います。</p>
+<p>
+短期間の宿泊支援を通じて、ご本人とご家族をサポートします。
+</p>
 </div>
 
 </div>
 
 </div>
-
 </section>
 
-<!-- ===== エリア ===== -->
+<section class="area" id="area">
+<div class="container area-wrap">
 
-<section id="area">
+<div class="section-title">
+<span>AREA</span>
+<h2>対応エリア</h2>
+</div>
 
-<div class="container">
+<p class="area-text">
+岸和田市を中心に、大阪府泉州エリアで幅広く対応しています。
+</p>
 
-<h2 class="section-title">
-対応エリア
-</h2>
-
-<div class="area-wrap">
-
-<div class="area-item">岸和田市</div>
-<div class="area-item">忠岡町</div>
-<div class="area-item">和泉市</div>
-<div class="area-item">泉大津市</div>
-<div class="area-item">貝塚市</div>
-<div class="area-item">堺市</div>
-
+<div class="area-tags">
+<span>岸和田市</span>
+<span>和泉市</span>
+<span>泉大津市</span>
+<span>貝塚市</span>
+<span>忠岡町</span>
+<span>堺市</span>
 </div>
 
 </div>
-
 </section>
 
-<!-- ===== 採用 ===== -->
-
-<section id="recruit">
-
+<section class="recruit" id="recruit">
 <div class="container">
 
-<h2 class="section-title">
-採用情報
-</h2>
+<div class="section-title">
+<span>RECRUIT</span>
+<h2>採用情報</h2>
+</div>
 
 <div class="recruit-grid">
 
-<div class="recruit-card glass">
-
-<div class="recruit-image"
-style="background-image:url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop');">
-</div>
-
-<div class="recruit-content">
+<div class="recruit-card">
+<img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop" alt="パート募集">
+<div class="recruit-body">
 <h3>パート募集</h3>
 <p>
-ライフスタイルに合わせて働けます。
+ライフスタイルに合わせた柔軟な働き方が可能です。
 </p>
+<a href="#contact">詳細を見る</a>
+</div>
 </div>
 
-</div>
-
-<div class="recruit-card glass">
-
-<div class="recruit-image"
-style="background-image:url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop');">
-</div>
-
-<div class="recruit-content">
+<div class="recruit-card">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop" alt="正社員募集">
+<div class="recruit-body">
 <h3>正社員募集</h3>
 <p>
-安心して長く働ける環境づくりを大切にしています。
+安定して長く働きたい方を歓迎しています。
 </p>
+<a href="#contact">詳細を見る</a>
+</div>
 </div>
 
-</div>
-
-<div class="recruit-card glass">
-
-<div class="recruit-image"
-style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop');">
-</div>
-
-<div class="recruit-content">
+<div class="recruit-card">
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop" alt="未経験OK">
+<div class="recruit-body">
 <h3>未経験OK</h3>
 <p>
-未経験の方も丁寧にサポートいたします。
+研修制度・サポート体制が整っているので安心です。
 </p>
+<a href="#contact">詳細を見る</a>
+</div>
 </div>
 
 </div>
 
 </div>
-
-</div>
-
 </section>
 
-<!-- ===== お問い合わせ ===== -->
-
-<section id="contact">
-
+<section class="faq" id="faq">
 <div class="container">
 
-<h2 class="section-title">
-お問い合わせ
+<div class="section-title">
+<span>FAQ</span>
+<h2>よくある質問</h2>
+</div>
+
+<div class="faq-list">
+
+<div class="faq-item">
+<h3>Q. 相談だけでも可能ですか？</h3>
+<p>
+はい。サービス利用前のご相談だけでもお気軽にお問い合わせください。
+</p>
+</div>
+
+<div class="faq-item">
+<h3>Q. どのような障がいに対応していますか？</h3>
+<p>
+身体障がい・知的障がい・精神障がい・発達障がいなど幅広く対応しています。
+</p>
+</div>
+
+<div class="faq-item">
+<h3>Q. 家族だけの相談でも大丈夫ですか？</h3>
+<p>
+もちろん可能です。ご家族からのご相談も多くいただいております。
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="contact-inner">
+
+<h2>
+お気軽にご相談ください
 </h2>
 
-<div class="contact-box glass">
-
 <p>
-お気軽にお問い合わせください。
+サービス利用・採用・福祉に関するご相談など、
+まずはお気軽にお問い合わせください。
 </p>
 
-<a href="ここにGoogleフォームURL"
-target="_blank"
-class="contact-button">
-
-お問い合わせフォームはこちら
-
+<a href="#">
+お問い合わせフォーム
 </a>
 
 </div>
+</section>
+
+<footer>
+<div class="container footer-grid">
+
+<div>
+<div class="footer-logo">居宅介護支援事業所 鳶</div>
+<p>
+障がいのある方もない方も、
+共に笑って社会生活を。
+</p>
+</div>
+
+<div class="footer-info">
+<p>〒596-0011</p>
+<p>大阪府岸和田市木材町17-1</p>
+<p>TEL：000-0000-0000</p>
+<p>MAIL：0000@gmail.com</p>
+</div>
 
 </div>
 
-</section>
-
-<!-- ===== フッター ===== -->
-
-<footer>
-
-<p>
-○○株式会社
-</p>
-
-<p>
-居宅介護支援事業所 鳶
-</p>
-
-<p>
-〒596-0011 大阪府岸和田市木材町17−1
-</p>
-
-<p>
-TEL：000-000-0000
-</p>
-
-<p>
-Mail：0000@gmail.com
-</p>
+<div class="copy">
+© 2026 居宅介護支援事業所 鳶 All Rights Reserved.
+</div>
 
 </footer>
 
 </body>
 </html>
+```
