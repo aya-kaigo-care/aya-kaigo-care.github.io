@@ -39,7 +39,6 @@ nav{background:rgba(255,255,255,.96);border-bottom:2px solid var(--border);paddi
 .hero{position:relative;min-height:540px;display:flex;align-items:center;overflow:hidden;background:var(--sea-light)}
 .hero-img{position:absolute;inset:0;z-index:1;opacity:.7}
 .hero-img img{width:100%;height:100%;object-fit:cover;object-position:center center}
-/* ホワイト透過グラデーションで、明るさを引き立てつつ文字をクッキリ読ませる演出 */
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(255,255,255,0.95) 0%,rgba(255,255,255,0.6) 50%,transparent 100%);z-index:2}
 .hero-content{position:relative;z-index:3;max-width:1040px;margin:0 auto;padding:80px 1.5rem;width:100%}
 .hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:var(--white);border:1px solid var(--sea);border-radius:20px;padding:6px 16px;font-size:12px;color:var(--sea-dark);font-weight:600;letter-spacing:.06em;margin-bottom:1.5rem;box-shadow:0 2px 8px rgba(14,165,233,.08)}
@@ -70,7 +69,6 @@ section{padding:80px 1.5rem}
 .svc-card{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .25s;display:flex;flex-direction:column;box-shadow:0 4px 15px rgba(0,0,0,.01)}
 .svc-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(56,189,248,.15);border-color:var(--sea)}
 
-/* 海のきらめきを表現したパステルカラーアイコンエリア */
 .svc-icon-box{height:95px;display:flex;align-items:center;justify-content:center;padding-top:1.8rem}
 .svc-icon-circle{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;transition:transform .2s}
 .svc-card:hover .svc-icon-circle{transform:scale(1.1)}
@@ -85,7 +83,6 @@ section{padding:80px 1.5rem}
 .area-bg{position:relative;overflow:hidden;background:var(--sea-light)}
 .area-photo-wrap{position:absolute;inset:0;z-index:0}
 .area-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center center}
-/* 爽やかなエメラルドブルーのオーバーレイ */
 .area-photo-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(56,189,248,0.85),rgba(254,252,232,0.6))}
 .area-content{position:relative;z-index:1;padding:80px 1.5rem}
 .area-inner{max-width:1040px;margin:0 auto}
@@ -127,7 +124,7 @@ section{padding:80px 1.5rem}
 .contact-box p{color:#fff;font-size:15px;line-height:1.95;margin-bottom:1.8rem;font-weight:400}
 .btn-contact{display:inline-block;background:#fff;color:var(--sea-dark);padding:15px 40px;border-radius:26px;font-size:15px;font-weight:700;text-decoration:none;letter-spacing:.04em;transition:all .2s;box-shadow:0 4px 15px rgba(0,0,0,.08)}
 .btn-contact:hover{background:var(--sea-light);color:var(--text);transform:translateY(-1px)}
-.contact-note{font-size:12px;color:rgba(255,255,255,.7);margin-top:12rem;line-height:1.9}
+.contact-note{font-size:12px;color:rgba(255,255,255,.7);margin-top:1.2rem;line-height:1.9}
 
 footer{background:#0F172A;color:rgba(255,255,255,.5);padding:3rem 1.5rem;text-align:center;font-size:12px;line-height:2.3}
 footer a{color:rgba(255,255,255,.4);text-decoration:none;font-weight:500}
@@ -157,10 +154,11 @@ footer a:hover{color:#fff}
   </div>
 </nav>
 
+<!-- 【最初】ヒーロー画像エリア -->
 <div class="hero">
   <div class="hero-img">
-    <!-- 【自社管理に変更】メイン背景画像 -->
-    <img src="images/hero-bg.jpg" alt="暖かな太陽の光と豊かな緑の野原">
+    <!-- パスを自社管理（images/hero-bg.jpg）に変更しました -->
+    <img src="images/hero-bg.jpg" alt="車椅子と青空、緑の芝生の風景">
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -174,118 +172,96 @@ footer a:hover{color:#fff}
   </div>
 </div>
 
+<!-- 【真ん中】事業所紹介エリア（画像左、文章右の設定です） -->
 <section class="about-bg" id="about">
   <div class="sec">
     <div class="about-grid">
+      <div class="about-photo">
+        <!-- パスを自社管理（images/about-bg.jpg）に変更しました -->
+        <img src="images/about-bg.jpg" alt="彩・虹をテーマにしたイメージ写真">
+      </div>
       <div>
         <p class="sec-tag">About Us</p>
         <h2 class="sec-title">事業所紹介・理念<small>私たちについて</small></h2>
         <div class="about-vision">
           <p>「その人らしさ」を大切に。<br>障がいのある方の自立と社会参加を支援します。</p>
         </div>
-        <p class="about-text">〇〇〇〇株式会社が運営する居宅介護支援事業所 鳶は、岸和田市木材町に拠点を置き、身体障がい・知的障がい・精神障がい・発達障がいのある方の在宅生活を幅広く支援しています。</p>
+        <p class="about-text">居宅介護支援事業所 鳶は、身体障がい・知的障がい・精神障がい・発達障がいのある方の在宅生活を幅広く支援しています。</p>
         <p class="about-text">「鳶」の名のように、高い視点で地域全体を見渡しながら、ご本人・ご家族・医療機関・各支援機関をつなぎ、最適なサービスをご提供します。どうぞお気軽にご相談ください。</p>
-      </div>
-      <div class="about-photo">
-        <!-- 【自社管理に変更】新緑の風景画像 -->
-        <img src="images/about-bg.jpg" alt="暖かな光が差し込む美しい新緑の風景">
       </div>
     </div>
   </div>
 </section>
 
+<!-- サービス内容（省略せずに残してあります） -->
 <section class="services-bg" id="services">
   <div class="sec">
     <p class="sec-tag">Services</p>
     <h2 class="sec-title">サービス内容<small>私たちが提供するサポート</small></h2>
     <div class="services-grid">
-
-      <!-- 居宅介護 -->
       <div class="svc-card">
         <div class="svc-icon-box">
-          <div class="svc-icon-circle bg-s">
-            <span class="material-symbols-outlined" style="font-size:inherit">home</span>
-          </div>
+          <div class="svc-icon-circle bg-s"><span class="material-symbols-outlined" style="font-size:inherit">home</span></div>
         </div>
         <div class="svc-body">
           <h3>居宅介護（ホームヘルプ）</h3>
           <p>ホームヘルパーがご自宅を訪問し、身体介護・家事援助・通院介助を行います。日常生活全般をきめ細かくサポートします。</p>
         </div>
       </div>
-
-      <!-- 移動支援 -->
       <div class="svc-card">
         <div class="svc-icon-box">
-          <div class="svc-icon-circle bg-c">
-            <span class="material-symbols-outlined" style="font-size:inherit">directions_walk</span>
-          </div>
+          <div class="svc-icon-circle bg-c"><span class="material-symbols-outlined" style="font-size:inherit">directions_walk</span></div>
         </div>
         <div class="svc-body">
           <h3>移動支援（ガイドヘルパー）</h3>
           <p>外出を必要とする障がいのある方に、ガイドヘルパーが同行して移動をサポートします。買い物・余暇活動・地域行事への参加を支援します。</p>
         </div>
       </div>
-
-      <!-- 同行援護 -->
       <div class="svc-card">
         <div class="svc-icon-box">
-          <div class="svc-icon-circle bg-sun">
-            <span class="material-symbols-outlined" style="font-size:inherit">visibility</span>
-          </div>
+          <div class="svc-icon-circle bg-sun"><span class="material-symbols-outlined" style="font-size:inherit">visibility</span></div>
         </div>
         <div class="svc-body">
           <h3>同行援護</h3>
           <p>視覚障がいのある方が外出する際に同行し、移動中の情報提供・代読・代筆などを行います。安心して外出できるよう全面的に支援します。</p>
         </div>
       </div>
-
-      <!-- 行動援護 -->
       <div class="svc-card">
         <div class="svc-icon-box">
-          <div class="svc-icon-circle bg-c">
-            <span class="material-symbols-outlined" style="font-size:inherit">favorite</span>
-          </div>
+          <div class="svc-icon-circle bg-c"><span class="material-symbols-outlined" style="font-size:inherit">favorite</span></div>
         </div>
         <div class="svc-body">
           <h3>行動援護</h3>
           <p>知的障がい・精神障がいにより行動が困難な方に対し、危険回避のための援護・外出時の移動支援・排泄・食事の介護を行います。</p>
         </div>
       </div>
-
-      <!-- グループホーム -->
       <div class="svc-card">
         <div class="svc-icon-box">
-          <div class="svc-icon-circle bg-s">
-            <span class="material-symbols-outlined" style="font-size:inherit">diversity_3</span>
-          </div>
+          <div class="svc-icon-circle bg-s"><span class="material-symbols-outlined" style="font-size:inherit">diversity_3</span></div>
         </div>
         <div class="svc-body">
           <h3>共同生活援助（グループホーム）</h3>
           <p>障がいのある方が少人数で共同生活を送りながら、日常生活上の相談・入浴・排泄・食事の介護など必要な支援を受けられる住まいです。</p>
         </div>
       </div>
-
-      <!-- 総合相談 -->
       <div class="svc-card">
         <div class="svc-icon-box">
-          <div class="svc-icon-circle bg-sun">
-            <span class="material-symbols-outlined" style="font-size:inherit">forum</span>
-          </div>
+          <div class="svc-icon-circle bg-sun"><span class="material-symbols-outlined" style="font-size:inherit">forum</span></div>
         </div>
         <div class="svc-body">
           <h3>障がいに関する総合相談</h3>
-          <p>「何から始めればいい？」「今のサービスを変えたい」など、障がい福祉全全般のご相談を無料で承ります。どうぞお気軽にお問い合わせください。</p>
+          <p>「何から始めればいい？」「今のサービスを変えたい」など、障がい福祉福祉全般のご相談を無料で承ります。どうぞお気軽にお問い合わせください。</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
+<!-- 【最後】対応エリアエリア -->
 <div class="area-bg" id="area">
   <div class="area-photo-wrap">
-    <!-- 【自社管理に変更】対応エリア背景（お花畑の風景） -->
-    <img src="images/area-bg.jpg" alt="明るく美しいお花畑と青空">
+    <!-- パスを自社管理（images/area-bg.jpg）に変更しました -->
+    <img src="images/area-bg.jpg" alt="地域の風景写真など">
   </div>
   <div class="area-content">
     <div class="area-inner">
@@ -303,6 +279,7 @@ footer a:hover{color:#fff}
   </div>
 </div>
 
+<!-- よくある質問（以下省略せずに残してあります） -->
 <section class="faq-bg" id="faq">
   <div class="sec">
     <p class="sec-tag">FAQ</p>
@@ -318,7 +295,7 @@ footer a:hover{color:#fff}
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="q-badge">Q</span>利用者の自己負担はありますか？<span class="chev">⌄</span></div>
-        <div class="faq-a">原則として service 費用の1割が自己負担となりますが、収入に応じた月額上限額が設けられているため、大きな負担なくご利用いただけます。生活保護受給者や低所得の方は自己負担が0円になる場合もあります。</div>
+        <div class="faq-a">原則として service 費用の1割が自己負担となりますが、収入に応じた月額上限額が設けられているため、大きな負担なくご利用いただけます。生活保護受気者や低所得の方は自己負担が0円になる場合もあります。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="q-badge">Q</span>家族だけで相談に来ることはできますか？<span class="chev">⌄</span></div>
